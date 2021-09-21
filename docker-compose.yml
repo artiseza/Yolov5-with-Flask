@@ -1,0 +1,11 @@
+version: '2.2'
+services:
+  api_dev:
+    image: api_dev
+    container_name: api_dev
+    stdin_open: true
+    tty: true
+    volumes:
+      - /home/chrisjan/projects/api_dev/app:/app
+    ports:
+      - "15588:15588"
