@@ -40,6 +40,4 @@ def run_app():
 if __name__ == "__main__":
     #app.run(debug=True, host='0.0.0.0', port=5555, ssl_context='adhoc')
     model = torch.hub.load('ultralytics/yolov5', 'custom', path='./weights/final.pt')  # default
-    # model = torch.hub.load('/path to yolo', 'custom', path='./weights/final.pt', source='local')  # local repo
     app.run(debug=True)
-    # app.run(debug=True, host='0.0.0.0', port=15588, ssl_context=('/app/html/ssl/openaifab.com/fullchain3.pem', '/app/html/ssl/openaifab.com/privkey3.pem'))
