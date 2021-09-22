@@ -1,9 +1,5 @@
 from flask import Flask, request, render_template, send_file, jsonify
-from werkzeug.utils import secure_filename, send_from_directory
 import os
-import numpy as np
-from PIL import Image
-import io
 import cv2
 import base64
 import torch
@@ -39,5 +35,5 @@ def run_app():
 
 if __name__ == "__main__":
     #app.run(debug=True, host='0.0.0.0', port=5555, ssl_context='adhoc')
-    model = torch.hub.load('ultralytics/yolov5', 'custom', path='./weights/final.pt')  # default
+    model = torch.hub.load('ultralytics/yolov5', 'custom', path='./weights/final.pt')  # load weight model
     app.run(debug=True)
