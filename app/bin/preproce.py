@@ -19,9 +19,8 @@ def Preprocessing(File,fname):
         ds = pydicom.read_file(File)  #讀取.dcm文件
         img = ds.pixel_array  # 提取圖像信息       
         img_2d = img.astype(float)
-        ## Step 2. Rescaling grey scale between 0-255
-        img_2d_scaled = (np.maximum(img_2d,0) / img_2d.max()) * 255.0
-        out_img = usm(255-img_2d_scaled)
+        img_2d_scaled = (np.maximum(img_2d,0) / img_2d.max()) * 255.0 # Rescaling grey scale between 0-255
+        out_img = usm(255-img_2d_scaled) # inverse to white
         return out_img
     elif fname[-4:] == '.jpg':
         # img = Image.open(io.BytesIO(File.read()))       
