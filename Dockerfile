@@ -20,7 +20,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN pip3 --no-cache-dir install --upgrade pip
 RUN pip3 --no-cache-dir install \
-        numpy==1.19.5 \
+        numpy==1.21.2 \
+        opencv==3.4.2 \
         scipy==1.5.4 \
         flask==1.1.2 \
         pandas==1.1.5 \
@@ -28,5 +29,6 @@ RUN pip3 --no-cache-dir install \
         requests==2.25.1 \
         pyyaml==5.4.1 \
         cryptography==3.4.6 \
+        pydicom==2.1.2 \
         flask-htpasswd==0.4.0
 ENTRYPOINT bash
