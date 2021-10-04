@@ -11,6 +11,7 @@ app = Flask(__name__, template_folder=template_dir, static_url_path='/static', s
 uploads_dir = './uploads/'
 os.makedirs(uploads_dir, exist_ok=True)
 
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='./weights/final.pt')  # load weight model
 @app.route('/edah_api', methods=['POST'])
 def run_edah_api():
     json_list = []
@@ -35,5 +36,4 @@ def run_app():
 
 if __name__ == "__main__":
     #app.run(debug=True, host='0.0.0.0', port=5555, ssl_context='adhoc')
-    model = torch.hub.load('ultralytics/yolov5', 'custom', path='./weights/final.pt')  # load weight model
     app.run(debug=True)
